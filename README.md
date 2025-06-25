@@ -1,36 +1,42 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Descripción
 
-First, run the development server:
+Este es un e-commerce de practica para revisar algunos conceptos de Nextjs.
+Dentro del e-commerce tendremos las siguientes secciones: - Catálogo de productos - Carrito de compras - Buscador
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Versión de Node
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+"node": ">=18.18.0"
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Recursos usados en la app
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Docker
+- Postgresl
+- Zustand
+- swipperjs
 
-## Learn More
+## Ejecutar en DEV
 
-To learn more about Next.js, take a look at the following resources:
+1. Clonar el repositorio
+2. Crear una copia del `.env.template` y renombrarlo a `.env` y cambiar las variables de entorno.
+3. Instalar las dependencias `npm install`
+4. Ejecutar: `docker compose up -d` para levantar la bd de postgresql
+5. Correr las migraciones de prisma `npx prisma migrate dev`
+6. Ejecutar seed `npm run seed`
+7. Levantar el proyecto `npm run dev`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Ejecutar en PROD
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Levantar el contenedor de BD postgresql
 
-## Deploy on Vercel
+Ejecutar: `docker compose up -d`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Comandos de Prisma
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Traer datos de una BD previamente creada
+  `npx prisma db pull`
+- Crear modelo en una BD
+  `npx prisma migrate dev --name ProducCategory`
+- Crear el cliente
+  `npx prisma generate`
