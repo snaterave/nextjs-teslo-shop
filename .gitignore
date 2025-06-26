@@ -2,6 +2,7 @@
 
 .env
 /postgres/
+package-lock.json
 
 # dependencies
 /node_modules
