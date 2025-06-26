@@ -2,10 +2,7 @@
   "name": "teslo-shop",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": ">=18.18.0",
-    "npm": ">=9.8.1"
-  },
+ 
   "scripts": {
     "dev": "next dev",
     "build": "npm run prisma:deploy && next build",
